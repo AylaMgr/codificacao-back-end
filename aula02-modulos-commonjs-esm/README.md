@@ -98,7 +98,7 @@ Configurado com `"type": "module"` para permitir a utilização da sintaxe `impo
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Matheus de Sousa dos Santos",
+  "author": "Ayla Pessoa",
   "license": "ISC",
   "type": "module"
 }
