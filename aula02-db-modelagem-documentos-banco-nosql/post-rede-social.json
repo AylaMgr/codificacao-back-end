@@ -1,0 +1,14 @@
+{
+    "texto":"Momento de renovação",
+    "autor":"Lk Brito",
+    "data":"2023-10-1",
+    "curtidas":[
+        {"nome":"Laurent"},
+        {"nome":"Ayla"},
+        {"nome":"Michelle"}
+    ],
+    "comentarios":[
+        {"nome":"Ayla", "comentario":"Lindo"},
+        {"nome":"Laurent", "comentario":"Lindo"}
+    ],
+}
