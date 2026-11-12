@@ -24,11 +24,29 @@ export class AlunosService {
     // }
 
     //! metodo para buscar todos os alunos com paginação
-    async findPage(page: number, limit: number){
+    async findPageFilter(
+        page: number,
+        limit: number,
+        nome?: string,
+        curso?: string,
+        orderBy?: string,
+        orderDirection?: 'asc' | 'desc',){
         const skip = (page - 1) * limit;
+        const filter: any = {};
+        const sort : any = {};
+        if(nome){
+            filter.nome = { $regex: nome, $options: 'i' };
+        }
+        if(curso){
+            filter.cursos = curso;
+        }
+        if(orderBy){
+            sort[orderBy] = orderDirection === 'desc' ? -1 : 1;
+        }
+
         const [data, total] = await Promise.all([
-            this.alunoModel.find().skip(skip).limit(limit).exec(),
-            this.alunoModel.countDocuments().exec(),
+            this.alunoModel.find(filter).sort(sort).skip(skip).limit(limit).exec(),
+            this.alunoModel.countDocuments(filter).exec(),
         ]);
         return { data,
                  meta:{
