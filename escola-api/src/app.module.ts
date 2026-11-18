@@ -4,7 +4,7 @@ import { AlunosModule } from './alunos/aluno.moduller.js';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/escola-dbn'),
+    MongooseModule.forRoot('mongodb://localhost:27017/escola_dbn'),
     AlunosModule,
   ],
   
